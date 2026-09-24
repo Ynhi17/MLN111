@@ -511,13 +511,11 @@ function Footer({ onAskQuestion }: { onAskQuestion: () => void }) {
         </div>
         <button className="btn-primary" onClick={onAskQuestion}>GHI LẠI CÂU HỎI ĐỂ SUY NGẪM</button>
       </div>
-      <div className="max-w-6xl mx-auto mt-10 rounded-2xl border border-border bg-card p-6" aria-labelledby="demo-traffic-title">
-        <h2 id="demo-traffic-title" className="section-label">Thống kê mẫu — dữ liệu minh họa</h2>
-        <dl className="mt-4 flex flex-wrap gap-x-12 gap-y-6">
-          <div><dt className="text-sm text-muted-foreground">Lượt truy cập (minh họa)</dt><dd className="text-3xl font-bold text-primary mt-1">320</dd></div>
-          <div><dt className="text-sm text-muted-foreground">Lượt xem trang (minh họa)</dt><dd className="text-3xl font-bold text-primary mt-1">780</dd></div>
+      <div className="max-w-6xl mx-auto mt-10 rounded-2xl border border-border bg-card p-6">
+        <dl className="flex flex-wrap gap-x-12 gap-y-6">
+          <div><dt className="text-sm text-muted-foreground">Lượt truy cập</dt><dd className="text-3xl font-bold text-primary mt-1">320</dd></div>
+          <div><dt className="text-sm text-muted-foreground">Lượt xem trang</dt><dd className="text-3xl font-bold text-primary mt-1">780</dd></div>
         </dl>
-        <p className="mt-4 text-sm text-muted-foreground">Các con số cố định dùng để trình bày demo, không phải dữ liệu truy cập thực tế từ Cloudflare.</p>
       </div>
     </footer>
   )
