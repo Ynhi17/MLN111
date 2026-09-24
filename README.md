@@ -116,3 +116,8 @@ npm run deploy:cloudflare
 Chỉ chạy lệnh tạo project khi chưa có project đó. CLI tạo project Direct Upload; nếu muốn tự deploy theo GitHub thì tạo bằng dashboard theo hướng dẫn trên ngay từ đầu.
 
 Demo chưa có lưu trữ lâu dài hay đăng nhập người dùng.
+# Thống kê truy cập thật
+
+Footer lấy visits và page views từ Cloudflare Web Analytics qua `/api/analytics`, trong cửa sổ 24 giờ kết thúc ở mốc 5 phút gần nhất. Không có số liệu dự phòng cố định. Lỗi kết nối/quyền truy cập hiển thị trạng thái chưa tải được.
+
+Pages cần secret `CF_ANALYTICS_TOKEN` có quyền đọc Account Analytics cho tài khoản chứa `mln111`. Lưu tại Settings → Variables and Secrets (Production), rồi redeploy. Không đặt token vào biến `VITE_*`, mã nguồn hoặc Git. Chạy thử endpoint bằng `npm run preview:cloudflare` với secret trong `.dev.vars` (đã được gitignore). API chỉ trả hai tổng số và khoảng thời gian, không trả token hay dữ liệu khách truy cập chi tiết.

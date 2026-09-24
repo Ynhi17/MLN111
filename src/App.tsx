@@ -1,4 +1,5 @@
 import Foundations from './components/Foundations'
+import TrafficStats from './components/TrafficStats'
 import Conclusion from './components/Conclusion'
 import { roleDetails } from './data/roleDetails'
 import QuestionModal from './components/QuestionModal'
@@ -511,12 +512,7 @@ function Footer({ onAskQuestion }: { onAskQuestion: () => void }) {
         </div>
         <button className="btn-primary" onClick={onAskQuestion}>GHI LẠI CÂU HỎI ĐỂ SUY NGẪM</button>
       </div>
-      <div className="max-w-6xl mx-auto mt-10 rounded-2xl border border-border bg-card p-6">
-        <dl className="flex flex-wrap gap-x-12 gap-y-6">
-          <div><dt className="text-sm text-muted-foreground">Lượt truy cập</dt><dd className="text-3xl font-bold text-primary mt-1">320</dd></div>
-          <div><dt className="text-sm text-muted-foreground">Lượt xem trang</dt><dd className="text-3xl font-bold text-primary mt-1">780</dd></div>
-        </dl>
-      </div>
+      <TrafficStats />
     </footer>
   )
 }
