@@ -1,0 +1,7 @@
+export const roleDetails = [
+  { why: 'Việc làm rõ khái niệm, quan hệ và giả định giúp bạn sắp xếp vấn đề thành những phần có thể kiểm tra, thay vì chỉ phản ứng theo ấn tượng.', action: 'Viết điều đã biết, điều đang giả định và điều cần tìm hiểu; vẽ các mối liên hệ trước khi đề xuất cách giải quyết.' },
+  { why: 'Khi học cách xem xét căn cứ của nhận định, bạn có thể phân biệt uy tín, số đông và bằng chứng; phản biện cũng bao gồm kiểm tra quan điểm của chính mình.', action: 'Tìm nguồn gốc thông tin, đối chiếu với nguồn độc lập và tạm hoãn chia sẻ khi chưa đủ căn cứ.' },
+  { why: 'Xem xét quan hệ giữa lý luận và thực tiễn giúp bạn tìm ý nghĩa của kiến thức, đồng thời đánh giá lại cách học qua kết quả thực tế.', action: 'Chọn một khái niệm trong môn học, thử áp dụng vào bài tập hoặc dự án rồi ghi lại chỗ hiểu sai để sửa.' },
+  { why: 'Suy xét về con người, giá trị và trách nhiệm giúp bạn nhận diện điều mình coi trọng, đồng thời cân nhắc điều kiện sống và tác động đến người khác.', action: 'Liệt kê ba giá trị ưu tiên, chi phí cần đáp ứng và những giới hạn không muốn đánh đổi; trao đổi với người có kinh nghiệm.' },
+  { why: 'Cách nhìn toàn diện và phát triển khuyến khích cân nhắc nhiều quan hệ, hệ quả và khả năng thay đổi, thay vì xem lựa chọn hiện tại là chắc chắn tối ưu.', action: 'So sánh phương án theo cùng tiêu chí, ghi rõ dữ kiện còn thiếu và đặt thời điểm xem lại quyết định sau khi thử nghiệm.' },
+]

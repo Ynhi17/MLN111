@@ -1,0 +1,622 @@
+I already have a completed static website design in Figma for the project:
+
+“THINK! – Triết học không xa”
+Topic: “Chúng ta học Triết học để làm gì? – Vai trò của Triết học đối với sinh viên”
+
+DO NOT redesign the website.
+
+Keep the existing:
+
+* Layout
+* Typography
+* Color palette
+* Images
+* Illustrations
+* Card designs
+* Spacing
+* Overall visual identity
+* Content structure
+
+Your task is to transform the existing static design into a FUNCTIONAL INTERACTIVE WEBSITE DEMO.
+
+The purpose is to let me click, interact, and experience how the real website would work during a presentation.
+
+This is a FRONT-END DEMO only.
+No backend.
+No database.
+No authentication.
+No API is required.
+
+Use local state/mock data where necessary.
+
+---
+
+# 1. NAVIGATION
+
+Make the navigation functional.
+
+Navbar:
+
+THINK!
+Trang chủ
+Triết học
+Sinh viên
+Tình huống
+Challenge
+
+Requirements:
+
+* Clicking each navigation item smoothly scrolls to its corresponding section.
+* Navbar remains sticky while scrolling.
+* Highlight the current section when possible.
+* “THINK!” logo returns to the top.
+* “BẮT ĐẦU SUY NGHĨ” scrolls to the first interactive section.
+
+Mobile:
+
+* Convert navigation into a hamburger menu.
+* Clicking a menu item closes the menu automatically.
+
+---
+
+# 2. HERO INTERACTION
+
+Existing Hero section:
+
+“CHÚNG TA HỌC
+TRIẾT HỌC
+ĐỂ LÀM GÌ?”
+
+Buttons:
+
+“KHÁM PHÁ”
+“THỬ MỘT CÂU HỎI”
+
+Make them functional.
+
+“KHÁM PHÁ”
+→ Smooth scroll to the next section.
+
+“THỬ MỘT CÂU HỎI”
+→ Smooth scroll directly to the interactive question/quiz section.
+
+Add subtle animation when entering the Hero section.
+
+---
+
+# 3. QUESTION → THINK → REFLECT CARDS
+
+Existing three cards:
+
+QUESTION
+THINK
+REFLECT
+
+Make each card clickable.
+
+When the user clicks a card:
+
+Open an interactive modal or expandable panel.
+
+QUESTION:
+
+Title:
+“QUESTION”
+
+Content:
+“Điều này có thực sự đúng không?”
+
+Additional explanation:
+“Triết học bắt đầu khi chúng ta không chấp nhận mọi thứ chỉ vì nó đã trở nên quen thuộc.”
+
+Button:
+“TIẾP TỤC SUY NGHĨ”
+
+---
+
+THINK:
+
+Title:
+“THINK”
+
+Content:
+“Tại sao mình lại nghĩ như vậy?”
+
+Additional explanation:
+“Hãy thử tìm hiểu những lý do, bằng chứng và giả định phía sau một quan điểm.”
+
+Button:
+“TIẾP TỤC SUY NGHĨ”
+
+---
+
+REFLECT:
+
+Title:
+“REFLECT”
+
+Content:
+“Nếu nhìn từ một góc độ khác thì sao?”
+
+Additional explanation:
+“Một vấn đề có thể có nhiều cách nhìn khác nhau.”
+
+Button:
+“ĐẶT CÂU HỎI”
+
+The modal must have:
+
+* Close button
+* Smooth opening animation
+* Smooth closing animation
+
+---
+
+# 4. ROLE CARDS – VAI TRÒ CỦA TRIẾT HỌC
+
+Existing cards:
+
+TƯ DUY
+TƯ DUY PHẢN BIỆN
+HỌC TẬP
+ĐỊNH HƯỚNG
+RA QUYẾT ĐỊNH
+
+Make each card interactive.
+
+When clicked:
+
+* Expand the card or open a modal.
+* Show:
+
+  * Title
+  * Short explanation
+  * One realistic student example
+  * One reflective question
+
+Example:
+
+TƯ DUY PHẢN BIỆN
+
+Explanation:
+“Không vội tin một thông tin chỉ vì nhiều người đang nói về nó.”
+
+Student example:
+“Bạn thấy một video có hàng triệu lượt xem trên mạng xã hội.”
+
+Reflective question:
+“Video có nhiều lượt xem có đồng nghĩa với việc thông tin trong đó chính xác không?”
+
+Button:
+“THỬ TÌNH HUỐNG”
+
+Clicking “THỬ TÌNH HUỐNG”
+→ scroll to the Scenario section.
+
+---
+
+# 5. REAL-LIFE SCENARIOS
+
+Create an interactive scenario system.
+
+Scenarios:
+
+1. SOCIAL MEDIA
+2. UNIVERSITY
+3. CAREER
+4. AI
+5. FAILURE
+
+Display one scenario at a time.
+
+Example:
+
+SOCIAL MEDIA
+
+“Có 100.000 người cùng nói điều này.
+Vậy nó có chắc chắn đúng không?”
+
+Question:
+
+“Bạn sẽ làm gì?”
+
+Options:
+
+A. Tin vì rất nhiều người nói như vậy.
+
+B. Không tin ngay và kiểm tra nguồn thông tin.
+
+C. Hỏi bạn bè xem họ nghĩ gì.
+
+D. Bỏ qua.
+
+When the user selects an option:
+
+* Highlight selected answer.
+* Show feedback.
+* Show a short explanation.
+* Display a “PHILOSOPHY MOMENT”.
+
+Example:
+
+“Điều quan trọng không chỉ là bạn chọn đáp án nào.
+Triết học khuyến khích bạn xem xét lý do và giả định đứng phía sau lựa chọn đó.”
+
+Add button:
+
+“TÌNH HUỐNG TIẾP THEO →”
+
+Clicking it loads the next scenario.
+
+Track progress:
+
+SCENARIO 1 / 5
+
+After the fifth scenario:
+
+Show:
+
+“Bạn đã hoàn thành 5 tình huống.”
+
+Button:
+
+“THỬ LẠI”
+
+Reset the scenario progress.
+
+---
+
+# 6. INTERACTIVE QUIZ
+
+Create a separate quiz interaction.
+
+Title:
+
+“WHAT WOULD YOU DO?”
+
+Question:
+
+“Một sinh viên IT ra trường và rất khó tìm việc.
+Bạn nghĩ nguyên nhân chính là gì?”
+
+Options:
+
+A. Thị trường việc làm quá cạnh tranh.
+
+B. Sinh viên chưa có đủ kỹ năng.
+
+C. Chương trình đào tạo chưa đáp ứng thực tế.
+
+D. Có thể có nhiều nguyên nhân cùng tồn tại.
+
+Requirements:
+
+* User can select ONE answer.
+* Selected answer gets a clear active state.
+* Disable/enable submit button appropriately.
+
+Button:
+
+“XEM PHÂN TÍCH”
+
+After clicking:
+
+Show:
+
+“PHILOSOPHY MOMENT”
+
+Text:
+
+“Điều quan trọng không chỉ là bạn chọn đáp án nào,
+mà là bạn có thể giải thích vì sao mình chọn nó.”
+
+Also show:
+
+“Bạn đang tiếp cận vấn đề từ một hay nhiều góc nhìn?”
+
+Buttons:
+
+“THỬ LẠI”
+“ĐẶT CÂU HỎI KHÁC”
+
+“THỬ LẠI”
+→ resets the quiz.
+
+“ĐẶT CÂU HỎI KHÁC”
+→ loads another question.
+
+---
+
+# 7. 30 SECOND PHILOSOPHY CHALLENGE
+
+Make the timer FUNCTIONAL.
+
+Initial state:
+
+30
+
+Question:
+
+“Nếu không có điểm số,
+bạn còn muốn học không?”
+
+Button:
+
+“BẮT ĐẦU”
+
+When clicked:
+
+Start a real countdown:
+
+30
+29
+28
+27
+...
+0
+
+Display:
+“THỜI GIAN SUY NGHĨ”
+
+During countdown:
+
+* Disable the Start button.
+* Add subtle timer animation.
+* Keep the question visible.
+
+When timer reaches 0:
+
+Show:
+
+“HẾT GIỜ.”
+
+Then:
+
+“Bạn vừa dành 30 giây để suy nghĩ.
+
+Đó chính là một phần của Triết học.”
+
+Buttons:
+
+“THỬ CÂU KHÁC”
+“CHIA SẺ CÂU TRẢ LỜI”
+
+“THỬ CÂU KHÁC”
+→ reset timer and load another question.
+
+Possible questions:
+
+1.
+
+“Nếu mọi người đều nghĩ giống bạn,
+bạn có chắc mình đang đúng không?”
+
+2.
+
+“Thành công là có nhiều tiền,
+hay là được sống theo điều mình coi trọng?”
+
+3.
+
+“Nếu AI có thể làm bài nhanh hơn bạn,
+bạn còn cần phải học không?”
+
+---
+
+# 8. USER QUESTION MODAL
+
+Final CTA:
+
+“ĐẶT MỘT CÂU HỎI”
+
+When clicked:
+
+Open modal.
+
+Title:
+
+“CÂU HỎI CỦA BẠN LÀ GÌ?”
+
+Input / textarea:
+
+“Viết câu hỏi của bạn…”
+
+Character counter:
+
+0 / 200
+
+Button:
+
+“BẮT ĐẦU SUY NGHĨ”
+
+Requirements:
+
+* User can type.
+* Character counter updates live.
+* Submit button is disabled if input is empty.
+* Maximum 200 characters.
+
+After submit:
+
+Close the modal.
+
+Show a small success state:
+
+“Câu hỏi của bạn đã được ghi lại.”
+
+Then display:
+
+“Bạn vừa bắt đầu một hành trình suy nghĩ.”
+
+Also display the user's submitted question inside a card.
+
+Button:
+
+“ĐẶT CÂU HỎI KHÁC”
+
+---
+
+# 9. PROGRESS / GAMIFICATION
+
+Add a subtle progress indicator.
+
+For example:
+
+“YOUR THINKING JOURNEY”
+
+Show:
+
+○ Question
+○ Think
+○ Reflect
+○ Explore
+○ Challenge
+
+As the user interacts with the website, mark completed steps.
+
+Example:
+
+QUESTION ✓
+THINK ✓
+REFLECT ✓
+EXPLORE ○
+CHALLENGE ○
+
+Do not make this feel like a game for children.
+Keep it sophisticated and minimal.
+
+---
+
+# 10. SCROLL ANIMATIONS
+
+Add subtle scroll-based animations.
+
+When a section enters the viewport:
+
+* Fade in
+* Slight upward movement
+* Cards appear sequentially
+
+Do NOT use excessive animations.
+
+Keep animations:
+
+* 300–700ms
+* Smooth
+* Minimal
+* Premium
+
+---
+
+# 11. MICRO INTERACTIONS
+
+Buttons:
+
+* Hover
+* Press
+* Disabled
+* Active
+
+Cards:
+
+* Hover elevation
+* Slight movement
+* Border transition
+
+Quiz:
+
+* Selected
+* Unselected
+* Submitted
+* Result
+
+Modal:
+
+* Opening
+* Closing
+
+Timer:
+
+* Running
+* Finished
+* Reset
+
+---
+
+# 12. RESPONSIVE BEHAVIOR
+
+Make the entire interactive demo responsive.
+
+Desktop:
+1440px
+
+Tablet:
+768px
+
+Mobile:
+390px
+
+On mobile:
+
+* Stack cards vertically.
+* Make buttons full width when appropriate.
+* Make modal fit the screen.
+* Keep typography readable.
+* Make quiz options easy to tap.
+* Make timer large and centered.
+* Convert navbar to hamburger menu.
+
+---
+
+# 13. DEMO DATA
+
+Use mock/local data only.
+
+Do NOT add:
+
+* Database
+* Backend
+* API
+* Login
+* Server
+* External authentication
+
+The purpose is only to demonstrate the user experience and interactions.
+
+---
+
+# 14. IMPORTANT
+
+DO NOT redesign the existing Figma website.
+
+Preserve the current visual design as much as possible.
+
+Only add:
+
+* Functional interactions
+* States
+* Modals
+* Quiz logic
+* Scenario logic
+* Timer logic
+* Form interaction
+* Navigation
+* Animations
+* Responsive behavior
+
+The final result should feel like:
+
+“A real working website prototype based directly on my existing Figma design.”
+
+A lecturer should be able to:
+
+1. Open the website.
+2. Scroll through the content.
+3. Click cards.
+4. Try scenarios.
+5. Answer the quiz.
+6. Start the 30-second challenge.
+7. Enter their own philosophical question.
+8. See the website respond to their actions.
+
+Make the interactions obvious enough for a presentation, but keep the overall design elegant and academically appropriate.

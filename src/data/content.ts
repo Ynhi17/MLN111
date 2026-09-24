@@ -1,0 +1,105 @@
+export const ROLE_CARDS = [
+  {
+    id: 'tu-duy',
+    num: '01',
+    title: 'TƯ DUY',
+    explanation: 'Rèn luyện khả năng suy nghĩ có cấu trúc và sâu sắc.',
+    example: 'Bạn cần phân tích một vấn đề kỹ thuật phức tạp và không biết bắt đầu từ đâu.',
+    question: 'Bạn thường bắt đầu suy nghĩ về một vấn đề như thế nào?',
+  },
+  {
+    id: 'phan-bien',
+    num: '02',
+    title: 'TƯ DUY PHẢN BIỆN',
+    explanation: 'Không vội tin một thông tin chỉ vì nhiều người đang nói về nó.',
+    example: 'Bạn thấy một video có hàng triệu lượt xem trên mạng xã hội.',
+    question: 'Video có nhiều lượt xem có đồng nghĩa với thông tin chính xác không?',
+  },
+  {
+    id: 'hoc-tap',
+    num: '03',
+    title: 'HỌC TẬP',
+    explanation: 'Giúp bạn hiểu tại sao mình học, không chỉ học để có điểm số.',
+    example: 'Bạn đang học một môn không liên quan trực tiếp đến chuyên ngành.',
+    question: 'Kiến thức nào có giá trị thực sự lâu dài với bạn?',
+  },
+  {
+    id: 'dinh-huong',
+    num: '04',
+    title: 'ĐỊNH HƯỚNG',
+    explanation: 'Làm rõ giá trị và mục tiêu để lựa chọn hướng đi phù hợp với điều kiện của mình.',
+    example: 'Bạn phân vân giữa công việc lương cao nhưng không có ý nghĩa.',
+    question: 'Điều gì thực sự quan trọng với bạn trong cuộc sống?',
+  },
+  {
+    id: 'quyet-dinh',
+    num: '05',
+    title: 'RA QUYẾT ĐỊNH',
+    explanation: 'Cung cấp công cụ để suy luận, cân nhắc và đưa ra quyết định có căn cứ.',
+    example: 'Bạn phải lựa chọn giữa hai con đường sự nghiệp hoàn toàn khác nhau.',
+    question: 'Bạn dựa vào điều gì khi đưa ra một quyết định khó khăn?',
+  },
+]
+
+export const SCENARIOS = [
+  {
+    id: 1,
+    label: 'SOCIAL MEDIA',
+    situation: 'Có 100.000 người cùng nói điều này.\nVậy nó có chắc chắn đúng không?',
+    question: 'Bạn sẽ làm gì?',
+    options: [
+      { key: 'A', text: 'Tin vì rất nhiều người nói như vậy.' },
+      { key: 'B', text: 'Không tin ngay và kiểm tra nguồn thông tin.' },
+      { key: 'C', text: 'Hỏi bạn bè xem họ nghĩ gì.' },
+      { key: 'D', text: 'Bỏ qua.' },
+    ],
+  },
+  {
+    id: 2,
+    label: 'UNIVERSITY',
+    situation: 'Một giảng viên nói rằng chỉ có một cách đúng để giải quyết vấn đề này.\nBạn nghĩ gì?',
+    question: 'Bạn phản ứng như thế nào?',
+    options: [
+      { key: 'A', text: 'Tin tưởng hoàn toàn vì giảng viên là chuyên gia.' },
+      { key: 'B', text: 'Lắng nghe, nhưng tự mình kiểm tra lại thông tin.' },
+      { key: 'C', text: 'Đặt câu hỏi trực tiếp trong lớp.' },
+      { key: 'D', text: 'Ghi chép lại và suy nghĩ thêm sau.' },
+    ],
+  },
+  {
+    id: 3,
+    label: 'CAREER',
+    situation: 'Bạn nhận được lời mời làm việc lương cao nhưng công việc không phù hợp với giá trị cá nhân.',
+    question: 'Bạn sẽ chọn như thế nào?',
+    options: [
+      { key: 'A', text: 'Nhận ngay vì thu nhập là ưu tiên hàng đầu.' },
+      { key: 'B', text: 'Từ chối vì giá trị cá nhân quan trọng hơn.' },
+      { key: 'C', text: 'Thương lượng để tìm điểm chung.' },
+      { key: 'D', text: 'Xin thêm thời gian để suy nghĩ.' },
+    ],
+  },
+  {
+    id: 4,
+    label: 'AI',
+    situation: 'AI có thể hoàn thành bài tập của bạn trong 30 giây.\nVậy bạn còn cần học không?',
+    question: 'Quan điểm của bạn là gì?',
+    options: [
+      { key: 'A', text: 'Không cần, AI làm được tất cả.' },
+      { key: 'B', text: 'Vẫn cần học để hiểu và kiểm soát AI.' },
+      { key: 'C', text: 'Chỉ cần học những gì AI không làm được.' },
+      { key: 'D', text: 'Học để biết đặt câu hỏi đúng cho AI.' },
+    ],
+  },
+  {
+    id: 5,
+    label: 'FAILURE',
+    situation: 'Bạn thất bại trong một kỳ thi quan trọng.\nBạn nhìn nhận điều này như thế nào?',
+    question: 'Bạn sẽ diễn giải thất bại này ra sao?',
+    options: [
+      { key: 'A', text: 'Đây là dấu hiệu mình không đủ năng lực.' },
+      { key: 'B', text: 'Đây là cơ hội để học hỏi và cải thiện.' },
+      { key: 'C', text: 'Hệ thống đánh giá chưa phản ánh đúng năng lực.' },
+      { key: 'D', text: 'Thất bại là một phần bình thường của hành trình.' },
+    ],
+  },
+]
