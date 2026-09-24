@@ -1,7 +1,7 @@
 export type QuizQuestion = { id: number; question: string; options: { key: string; text: string }[] }
 export type QuizAnswer = { questionId: number; option: string }
 export type QuizResult = { completed: number; message: string; reflections: { question: string; answer: string; perspective: string; explanation: string; action: string }[] }
-const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3001/api').replace(/\/$/, '')
+const API_URL = (import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:3001/api')).replace(/\/$/, '')
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   try {

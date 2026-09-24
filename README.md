@@ -86,4 +86,33 @@ npm run test:e2e
 
 Playwright tự chạy server nếu chưa có, tạo ảnh responsive trong `test-results/`. Frontend build ra `dist/`; `npm run preview` xem bản build. Backend build ra `backend/dist/`; chạy bằng `npm --prefix backend start`. Không chạy dev và preview cùng cổng một lúc.
 
-Đây là demo local, chưa có lưu trữ lâu dài, đăng nhập hay triển khai production.
+## Deploy Cloudflare Pages
+
+Project có API Pages Functions trong `functions/api/[[path]].ts`, tái sử dụng dữ liệu và logic quiz từ backend. Frontend build production mặc định gọi `/api` cùng tên miền; local vẫn gọi `http://localhost:3001/api`. Không cần chạy Express riêng khi deploy Pages.
+
+Kết nối repository `Ynhi17/MLN111` ở Cloudflare → Workers & Pages → Pages. Chọn nhánh `main`, root để trống, build command `npm run build`, output `dist`. Đặt `NODE_VERSION=22.20.0` và `VITE_API_URL=/api` cho Production/Preview. File `.node-version` và mặc định production cũng cung cấp các giá trị tương ứng. Không đặt API URL localhost trên Cloudflare.
+
+`wrangler.jsonc` cấu hình tên project `mln111` và output `dist`. Nếu dùng tên project khác, đổi tên trong file và script deploy cho khớp. Khi đã kết nối GitHub, push vào `main` sẽ kích hoạt build tự động. Nếu dashboard tự phát hiện pnpm, lockfile pnpm đã được đồng bộ với package.json.
+
+Kiểm tra local bằng runtime Cloudflare:
+
+```sh
+npm run typecheck
+npm run test:cloudflare
+npm run build
+npm run preview:cloudflare
+```
+
+Preview mặc định ở http://localhost:8788, bao gồm cả giao diện và API. Kiểm tra `/api/health`, `/api/quiz` và hoàn thành quiz. API kiểm tra dữ liệu, giới hạn body 16 KB và không lưu đáp án.
+
+Deploy bằng CLI (cần đăng nhập tài khoản của bạn):
+
+```sh
+npx wrangler login
+npx wrangler pages project create mln111 --production-branch main
+npm run deploy:cloudflare
+```
+
+Chỉ chạy lệnh tạo project khi chưa có project đó. CLI tạo project Direct Upload; nếu muốn tự deploy theo GitHub thì tạo bằng dashboard theo hướng dẫn trên ngay từ đầu.
+
+Demo chưa có lưu trữ lâu dài hay đăng nhập người dùng.
