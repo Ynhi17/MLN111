@@ -5,7 +5,7 @@ import { runnerQuestions } from '../src/data/runnerQuestions'
 
 test('Collision ends a run, while a correctly timed jump clears the obstacle', () => {
   const standing = newRun()
-  standing.obstacles.push({ x: 700, width: 25, height: 40 })
+  standing.obstacles.push({ x: 110, width: 25, height: 40 })
   standing.spawn = 10
   const jumping = structuredClone(standing)
   jump(jumping)
@@ -47,6 +47,7 @@ test('Each philosophy question has one valid answer and an explanation', () => {
 test('Extreme speed still detects obstacles crossing the player between frames', () => {
   const run = newRun()
   run.distance = 100000
+  run.elapsed = 30
   run.obstacles.push({ x: 100, width: 22, height: 40 })
   assert.equal(advance(run, 0.033, 800), true)
 })
@@ -55,6 +56,7 @@ test('Extreme speed still detects obstacles crossing the player between frames',
 test('Low birds hit standing players but pass above ducking players', () => {
   for (const ducking of [false, true]) {
     const run = newRun()
+    run.elapsed = 30
     run.ducking = ducking
     run.obstacles.push({ x: 100, width: 44, height: 22, altitude: 25, kind: 'bird' })
     assert.equal(advance(run, 0.033, 375), !ducking)
@@ -70,4 +72,19 @@ test('First obstacle is a bird and 30 seconds triggers extreme speed and density
   advance(late, 0.001, 800, () => 0)
   assert.ok(late.distance > early.distance * 2)
   assert.ok(late.spawn < early.spawn / 5)
+})
+
+
+test('Speed increases gradually before 30 seconds and resets for a new run', () => {
+  for (const width of [375, 800]) {
+    const speeds = [0, 10, 20, 29].map(elapsed => {
+      const run = newRun()
+      run.elapsed = elapsed; run.spawn = 10
+      advance(run, 0.001, width)
+      return run.distance / 0.001
+    })
+    assert.ok(speeds[0] < 400)
+    for (let i = 1; i < speeds.length; i++) assert.ok(speeds[i] > speeds[i - 1])
+    assert.equal(newRun().elapsed, 0)
+  }
 })

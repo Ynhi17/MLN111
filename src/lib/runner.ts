@@ -2,7 +2,7 @@ export const FLOOR = 216
 export const DINO_X = 42
 export type Obstacle = { x: number; width: number; height: number; kind?: 'cactus' | 'rock' | 'tree' | 'bird'; altitude?: number }
 export type Run = { elapsed: number; ducking: boolean; spawned: number; y: number; velocity: number; distance: number; spawn: number; obstacles: Obstacle[] }
-export const newRun = (): Run => ({ elapsed: 0, ducking: false, spawned: 0, y: 0, velocity: 0, distance: 0, spawn: 0.25, obstacles: [] })
+export const newRun = (): Run => ({ elapsed: 0, ducking: false, spawned: 0, y: 0, velocity: 0, distance: 0, spawn: 1.1, obstacles: [] })
 export function jump(run: Run) {
   if (run.y === 0 && !run.ducking) run.velocity = 650
 }
@@ -19,7 +19,8 @@ export function advance(run: Run, dt: number, width: number, random = Math.rando
 function advanceStep(run: Run, dt: number, width: number, random: () => number) {
   run.elapsed += dt
   const frenzy = run.elapsed >= 30
-  const speed = frenzy ? (width < 500 ? 8000 : 12000) : (width < 500 ? 2800 : 4400)
+  const progress = Math.min(run.elapsed / 30, 1)
+  const speed = frenzy ? (width < 500 ? 8000 : 12000) : (width < 500 ? 260 + 640 * progress * progress : 360 + 1040 * progress * progress)
   run.distance += speed * dt
   run.y = Math.max(0, run.y + run.velocity * dt)
   run.velocity -= 1850 * dt
@@ -31,7 +32,7 @@ function advanceStep(run: Run, dt: number, width: number, random: () => number) 
     run.spawned++
     const height = kind === 'bird' ? 22 : kind === 'rock' ? 26 : kind === 'tree' ? 58 : 40
     run.obstacles.push({ x: width + 30, width: kind === 'bird' ? 44 : 34, height, kind, altitude: kind === 'bird' ? 25 : 0 })
-    run.spawn = frenzy ? 0.09 + random() * 0.06 : 0.78 + random() * 0.10
+    run.spawn = frenzy ? 0.09 + random() * 0.06 : 1.25 - 0.47 * progress + random() * 0.18
   }
   for (const obstacle of run.obstacles) obstacle.x -= speed * dt
   run.obstacles = run.obstacles.filter(obstacle => obstacle.x + obstacle.width > -10)

@@ -156,7 +156,7 @@ export default function DinoGame() {
       <div className="section-label mb-4">CHƠI MỘT CHÚT · NGHĨ THÊM MỘT CHÚT</div>
       <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div><h2 id="dino-title" className="text-3xl sm:text-4xl font-bold tracking-tight">Nhảy qua. Nghĩ tiếp.</h2>
-          <p className="text-muted-foreground mt-3 max-w-xl leading-relaxed">Tốc độ cực nhanh ngay từ đầu! Nhảy qua đá, cây và xương rồng; giữ ↓ hoặc bấm CÚI để né chim bay thấp. Sau 30 giây, tốc độ và mật độ chướng ngại vật tăng cực mạnh để chuyển sang phần câu hỏi. Va chạm? Trả lời đúng một câu triết học để chạy tiếp. Không có đích đến — chỉ có kỷ lục mới.</p></div>
+          <p className="text-muted-foreground mt-3 max-w-xl leading-relaxed">Bắt đầu chậm để làm quen, rồi tăng tốc dần! Nhảy qua đá, cây và xương rồng; giữ ↓ hoặc bấm CÚI để né chim bay thấp. Sau 30 giây, tốc độ và mật độ chướng ngại vật tăng cực mạnh để chuyển sang phần câu hỏi. Va chạm? Trả lời đúng một câu triết học để chạy tiếp. Không có đích đến — chỉ có kỷ lục mới.</p></div>
         <span className="rounded-full border border-border px-4 py-2 text-xs font-semibold">∞ CHẾ ĐỘ VÔ TẬN</span>
       </div>
       <div className="rounded-3xl border border-border overflow-hidden bg-card shadow-sm">
