@@ -1,5 +1,6 @@
 import Foundations from './components/Foundations'
 import TrafficStats from './components/TrafficStats'
+import DinoGame from './components/DinoGame'
 import Conclusion from './components/Conclusion'
 import { roleDetails } from './data/roleDetails'
 import QuestionModal from './components/QuestionModal'
@@ -38,7 +39,7 @@ function Navbar({ onAskQuestion }: { onAskQuestion: () => void }) {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
-      const ids = ['hero', 'co-so', 'triet-hoc', 'sinh-vien', 'tinh-huong', 'quiz']
+      const ids = ['hero', 'co-so', 'triet-hoc', 'sinh-vien', 'tinh-huong', 'quiz', 'tro-choi']
       let cur = 'hero'
       for (const id of ids) {
         const el = document.getElementById(id)
@@ -67,6 +68,7 @@ function Navbar({ onAskQuestion }: { onAskQuestion: () => void }) {
     { label: 'Triết học', id: 'triet-hoc' },
     { label: 'Sinh viên', id: 'sinh-vien' },
     { label: 'Tình huống', id: 'tinh-huong' },
+    { label: 'Trò chơi', id: 'tro-choi' },
 
   ]
 
@@ -542,6 +544,7 @@ export default function App() {
       <RoleCards />
       <Scenarios onComplete={() => markStep('scenario')} />
       <Quiz />
+      <DinoGame />
 
       <Conclusion />
       </main>

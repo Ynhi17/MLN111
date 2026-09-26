@@ -2,7 +2,11 @@
 
 Demo tiếng Việt giữ thiết kế nền kem, tím và các section từ Figma Make. Frontend dùng React 19 + TypeScript + Vite 8 + Tailwind CSS v4. Backend Express + TypeScript chạy độc lập; không cần database.
 
-## Yêu cầu
+## Game khủng long
+
+Mục `Trò chơi` (`#tro-choi`) là game chạy vô tận: Space/↑, chạm sân hoặc nút Nhảy để né xương rồng. Va chạm mở câu hỏi ôn tập triết học; phải trả lời đúng mới chạy lượt kế tiếp, không có màn chiến thắng. Có 12 câu hỏi xáo trộn theo bộ, giải thích đáp án, điểm từng lượt và kỷ lục lưu trên thiết bị. Chuyển tab hoặc rời sân sẽ tạm dừng. Game không gọi backend và tiếp tục hoạt động khi mất mạng sau khi tải trang; chưa hỗ trợ mở trang mới khi hoàn toàn offline. Kiểm tra mô phỏng bằng `npm run test:game`.
+
+## Yêu cầu môi trường
 
 Node.js 22.20+ và npm. Chạy các lệnh tại thư mục project. Font Be Vietnam Pro được đóng gói local, không phụ thuộc Google Fonts khi mở website.
 
