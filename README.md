@@ -118,6 +118,6 @@ Chỉ chạy lệnh tạo project khi chưa có project đó. CLI tạo project 
 Demo chưa có lưu trữ lâu dài hay đăng nhập người dùng.
 # Thống kê truy cập thật
 
-Footer lấy visits và page views từ Cloudflare Web Analytics qua `/api/analytics`, trong cửa sổ 24 giờ kết thúc ở mốc 5 phút gần nhất. Không có số liệu dự phòng cố định. Lỗi kết nối/quyền truy cập hiển thị trạng thái chưa tải được.
+Footer lấy visits và page views từ Cloudflare Web Analytics qua `/api/analytics`, cộng dồn từ ngày 24/09/2026 (giờ Việt Nam). Binding D1 `TRAFFIC_DB` lưu từng ngày vào bảng `traffic_days`; không có số liệu dự phòng cố định và không reset theo ngày. Mỗi lần đồng bộ thay thế tổng của ngày thay vì cộng thêm, tránh đếm trùng khi tải lại. Ba ngày gần nhất được cập nhật lại để nhận dữ liệu trễ; ngày cũ được lưu lâu dài. API đồng bộ khi có người xem, tối đa mỗi 5 phút, lấy bù tối đa 7 ngày mỗi đợt. Nếu ngừng đồng bộ quá thời hạn lưu lịch sử của Cloudflare (6 tháng), cần khôi phục từ bản sao lưu; hệ thống giữ tổng đã lưu và báo chưa cập nhật được, không tự bịa phần bị thiếu.
 
 Pages cần secret `CF_ANALYTICS_TOKEN` có quyền đọc Account Analytics cho tài khoản chứa `mln111`. Lưu tại Settings → Variables and Secrets (Production), rồi redeploy. Không đặt token vào biến `VITE_*`, mã nguồn hoặc Git. Chạy thử endpoint bằng `npm run preview:cloudflare` với secret trong `.dev.vars` (đã được gitignore). API chỉ trả hai tổng số và khoảng thời gian, không trả token hay dữ liệu khách truy cập chi tiết.

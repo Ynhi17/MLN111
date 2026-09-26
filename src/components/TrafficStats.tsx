@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-type Stats = { visits: number; pageViews: number; from: string; to: string }
+type Stats = { visits: number; pageViews: number; from: string; to: string; stale?: boolean }
 
 export default function TrafficStats() {
   const [stats, setStats] = useState<Stats | null>(null)
@@ -12,7 +12,7 @@ export default function TrafficStats() {
         const response = await fetch('/api/analytics', { signal: controller.signal })
         const body = await response.json()
         if (!response.ok || !body.success) throw new Error('Unavailable')
-        if (!controller.signal.aborted) { setStats(body.data); setFailed(false) }
+        if (!controller.signal.aborted) { setStats(body.data); setFailed(Boolean(body.data.stale)) }
       } catch { if (!controller.signal.aborted) setFailed(true) }
     }
     void load()

@@ -14,7 +14,7 @@
     "dev:backend": "npm --prefix backend run dev",
     "dev:all": "concurrently -k npm:dev:frontend npm:dev:backend",
     "test:e2e": "playwright test",
-    "test:cloudflare": "tsx --test tests/cloudflare.test.ts",
+    "test:cloudflare": "tsx --test tests/cloudflare.test.ts tests/traffic.test.ts",
     "preview:cloudflare": "wrangler pages dev dist",
     "deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name mln111"
   },

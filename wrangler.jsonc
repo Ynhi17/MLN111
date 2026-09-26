@@ -2,5 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mln111",
   "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-09-24"
+  "compatibility_date": "2026-09-24",
+  "d1_databases": [{
+    "binding": "TRAFFIC_DB",
+    "database_name": "mln111-traffic",
+    "database_id": "299d9245-7824-42ca-8523-cd7780b5eb7c"
+  }]
 }
