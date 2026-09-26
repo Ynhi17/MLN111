@@ -7,7 +7,7 @@ export function jump(run: Run) {
   if (run.y === 0) run.velocity = 650
 }
 export function advance(run: Run, dt: number, width: number, random = Math.random) {
-  const speed = Math.min(width < 500 ? 320 : 440, (width < 500 ? 210 : 280) + run.distance / 180)
+  const speed = Math.min(width < 500 ? 420 : 600, (width < 500 ? 285 : 380) + run.distance / 95)
   run.distance += speed * dt
   run.y = Math.max(0, run.y + run.velocity * dt)
   run.velocity -= 1850 * dt
@@ -15,7 +15,7 @@ export function advance(run: Run, dt: number, width: number, random = Math.rando
   run.spawn -= dt
   if (run.spawn <= 0) {
     run.obstacles.push({ x: width + 30, width: 22 + Math.floor(random() * 12), height: 30 + Math.floor(random() * 17) })
-    run.spawn = 1.35 + random() * 0.65
+    run.spawn = 0.95 + random() * 0.4
   }
   for (const obstacle of run.obstacles) obstacle.x -= speed * dt
   run.obstacles = run.obstacles.filter(obstacle => obstacle.x + obstacle.width > -10)

@@ -28,7 +28,7 @@ test('No double jumps; long runs remain bounded and spawn playable gaps', () => 
   run.distance = 1000000
   const before = run.distance
   advance(run, 0.1, 375)
-  assert.ok(run.distance - before <= 32.01)
+  assert.ok(run.distance - before <= 42.01)
   for (let i = 0; i < 10000; i++) advance(run, 1 / 60, 375, () => 0)
   assert.ok(run.obstacles.length < 5)
   assert.ok(run.y >= 0)
