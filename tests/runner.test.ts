@@ -58,11 +58,11 @@ test('Low birds hit standing players but pass above ducking players', () => {
     const run = newRun()
     run.elapsed = 30
     run.ducking = ducking
-    run.obstacles.push({ x: 100, width: 44, height: 22, altitude: 25, kind: 'bird' })
+    run.obstacles.push({ x: 85, width: 44, height: 22, altitude: 25, kind: 'bird' })
     assert.equal(advance(run, 0.033, 375), !ducking)
   }
 })
-test('First obstacle is a bird and 30 seconds triggers extreme speed and density', () => {
+test('First obstacle is a bird and 30 seconds keeps pressure playable', () => {
   const early = newRun()
   early.spawn = 0
   advance(early, 0.001, 800, () => 0)
@@ -71,7 +71,9 @@ test('First obstacle is a bird and 30 seconds triggers extreme speed and density
   late.elapsed = 30; late.spawn = 0
   advance(late, 0.001, 800, () => 0)
   assert.ok(late.distance > early.distance * 2)
-  assert.ok(late.spawn < early.spawn / 5)
+  assert.ok(late.distance < early.distance * 4)
+  assert.ok(late.spawn < early.spawn)
+  assert.ok(late.spawn >= 0.58)
 })
 
 

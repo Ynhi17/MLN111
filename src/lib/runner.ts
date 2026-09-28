@@ -18,9 +18,11 @@ export function advance(run: Run, dt: number, width: number, random = Math.rando
 }
 function advanceStep(run: Run, dt: number, width: number, random: () => number) {
   run.elapsed += dt
-  const frenzy = run.elapsed >= 30
   const progress = Math.min(run.elapsed / 30, 1)
-  const speed = frenzy ? (width < 500 ? 8000 : 12000) : (width < 500 ? 260 + 640 * progress * progress : 360 + 1040 * progress * progress)
+  const overtime = Math.max(0, run.elapsed - 30)
+  const speed = width < 500
+    ? Math.min(940, 260 + 560 * progress * progress + overtime * 6)
+    : Math.min(1420, 360 + 860 * progress * progress + overtime * 8)
   run.distance += speed * dt
   run.y = Math.max(0, run.y + run.velocity * dt)
   run.velocity -= 1850 * dt
@@ -32,7 +34,8 @@ function advanceStep(run: Run, dt: number, width: number, random: () => number) 
     run.spawned++
     const height = kind === 'bird' ? 22 : kind === 'rock' ? 26 : kind === 'tree' ? 58 : 40
     run.obstacles.push({ x: width + 30, width: kind === 'bird' ? 44 : 34, height, kind, altitude: kind === 'bird' ? 25 : 0 })
-    run.spawn = frenzy ? 0.09 + random() * 0.06 : 1.25 - 0.47 * progress + random() * 0.18
+    const spawnBase = 1.25 - 0.47 * progress - Math.min(overtime * 0.006, 0.18)
+    run.spawn = Math.max(width < 500 ? 0.66 : 0.58, spawnBase) + random() * 0.18
   }
   for (const obstacle of run.obstacles) obstacle.x -= speed * dt
   run.obstacles = run.obstacles.filter(obstacle => obstacle.x + obstacle.width > -10)
